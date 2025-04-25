@@ -1,16 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from newspaper import Article
 from textblob import TextBlob
 import logging
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
 logging.basicConfig(level=logging.DEBUG)
 
 @app.route('/', methods=['GET'])
-def home():
-    return jsonify({'message': 'News Detection Backend. Use POST /analyze with a URL.'}), 200
+def serve_index():
+    return send_from_directory('.', 'index.html')
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
