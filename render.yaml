@@ -8,6 +8,6 @@ services:
     startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10
+        value: 3.10.12
       - key: API_URL
         value: https://news-detection-app.onrender.com
