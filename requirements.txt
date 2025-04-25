@@ -5,3 +5,4 @@ newspaper3k==0.2.8
 textblob==0.18.0
 Pillow==11.2.1
 requests==2.32.3
+lxml_html_clean==0.3.1
